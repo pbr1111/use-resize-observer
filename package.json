@@ -1,7 +1,8 @@
 {
-    "name": "use-resize-observer",
+    "name": "@pbr1111/use-resize-observer",
     "version": "1.0.0",
     "description": "useResizeObserver hook",
+    "private": false,
     "author": {
         "name": "pbr1111",
         "email": "pbr1111@gmail.com",
@@ -39,9 +40,10 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/pbr1111/use-resize-observer"
+        "url": "git+https://github.com/pbr1111/use-resize-observer.git"
     },
     "bugs": {
         "url": "https://github.com/pbr1111/use-resize-observer/issues"
-    }
+    },
+    "homepage": "https://github.com/pbr1111/use-resize-observer#readme"
 }
