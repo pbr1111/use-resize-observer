@@ -1,0 +1,47 @@
+{
+    "name": "use-resize-observer",
+    "version": "1.0.0",
+    "description": "useResizeObserver hook",
+    "author": {
+        "name": "pbr1111",
+        "email": "pbr1111@gmail.com",
+        "url": "https://github.com/pbr1111/use-resize-observer"
+    },
+    "keywords": [
+        "react",
+        "hooks",
+        "react-hooks"
+    ],
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts",
+    "scripts": {
+        "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --ignore \"src/**/*.d.ts\"",
+        "build:typings": "tsc --emitDeclarationOnly",
+        "build": "yarn build:js && yarn build:typings",
+        "bump": "npm version",
+        "prepublishOnly": "yarn build"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "@babel/cli": "^7.10.5",
+        "@babel/core": "^7.10.5",
+        "@babel/preset-env": "^7.10.4",
+        "@babel/preset-typescript": "^7.10.4",
+        "@types/react": "^16.9.43",
+        "@types/react-dom": "^16.9.8",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "typescript": "^3.9.7"
+    },
+    "peerDependencies": {
+        "react": ">=16.8.0",
+        "react-dom": ">=16.8.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pbr1111/use-resize-observer"
+    },
+    "bugs": {
+        "url": "https://github.com/pbr1111/use-resize-observer/issues"
+    }
+}
