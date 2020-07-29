@@ -1,6 +1,6 @@
 {
     "name": "@pbr1111/use-resize-observer",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "useResizeObserver hook",
     "private": false,
     "author": {
