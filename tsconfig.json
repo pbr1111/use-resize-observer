@@ -1,13 +1,20 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
-        "target": "esnext",
-        "moduleResolution": "node",
-        "strict": true,
+        "target": "es5",
+        "module": "esnext",
+        "lib": ["dom", "esnext"],
+        "allowJs": true,
+        "skipLibCheck": true,
         "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "jsx": "react",
         "outDir": "dist",
-        "declaration": true,
-        "emitDeclarationOnly": true
+        "declaration": true
     },
     "include": ["src"]
 }

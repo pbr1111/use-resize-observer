@@ -4,3 +4,4 @@ src
 .babelrc
 .prettierrc
 tsconfig.json
+.github
