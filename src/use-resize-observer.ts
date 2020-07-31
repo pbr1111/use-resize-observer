@@ -1,11 +1,11 @@
 import {
-    useEffect,
     useState,
     useRef,
     useMemo,
     useCallback,
     Ref,
-    RefCallback
+    RefCallback,
+    useLayoutEffect
 } from 'react';
 
 type Size = {
@@ -18,15 +18,22 @@ type ResizeObserverObject<T> = {
 } & Size;
 
 const useResizeObserver = <T extends Element>(): ResizeObserverObject<T> => {
+    const animationFrameId = useRef<number>();
     const nodeRef = useRef<T | null>();
     const resizeObserverRef = useRef<ResizeObserver>();
     const previousSize = useRef<Size>({});
     const [size, setSize] = useState<Size>({});
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         if (resizeObserverRef.current) {
             return;
         }
+
+        const updateSize = (width: number, height: number): void => {
+            const newSize = { width, height };
+            previousSize.current = newSize;
+            setSize(newSize);
+        };
 
         const resizeObserverCallback = (
             entries: ResizeObserverEntry[]
@@ -42,9 +49,9 @@ const useResizeObserver = <T extends Element>(): ResizeObserverObject<T> => {
                 previousSize.current.width !== width ||
                 previousSize.current.height !== height
             ) {
-                const newSize = { width, height };
-                previousSize.current = newSize;
-                setSize(newSize);
+                animationFrameId.current = requestAnimationFrame(() =>
+                    updateSize(width, height)
+                );
             }
         };
 
@@ -54,7 +61,12 @@ const useResizeObserver = <T extends Element>(): ResizeObserverObject<T> => {
             resizeObserverRef.current?.observe(nodeRef.current);
         }
 
-        return () => resizeObserverRef.current?.disconnect();
+        return () => {
+            if (animationFrameId.current) {
+                cancelAnimationFrame(animationFrameId.current);
+            }
+            resizeObserverRef.current?.disconnect();
+        };
     }, []);
 
     const ref: RefCallback<T> = useCallback((node: T | null) => {
