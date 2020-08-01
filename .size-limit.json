@@ -1,0 +1,14 @@
+[
+    {
+        "path": "dist/index.js",
+        "limit": "500 B"
+    },
+    {
+        "path": "dist/use-resize-observer.esm.js",
+        "limit": "500 B"
+    },
+    {
+        "path": "dist/use-resize-observer.cjs.production.min.js",
+        "limit": "500 B"
+    }
+]
