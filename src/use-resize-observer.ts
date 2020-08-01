@@ -29,12 +29,6 @@ const useResizeObserver = <T extends Element>(): ResizeObserverObject<T> => {
             return;
         }
 
-        const updateSize = (width: number, height: number): void => {
-            const newSize = { width, height };
-            previousSize.current = newSize;
-            setSize(newSize);
-        };
-
         const resizeObserverCallback = (
             entries: ResizeObserverEntry[]
         ): void => {
@@ -49,8 +43,10 @@ const useResizeObserver = <T extends Element>(): ResizeObserverObject<T> => {
                 previousSize.current.width !== width ||
                 previousSize.current.height !== height
             ) {
+                const newSize = { width, height };
+                previousSize.current = newSize;
                 animationFrameId.current = requestAnimationFrame(() =>
-                    updateSize(width, height)
+                    setSize(newSize)
                 );
             }
         };
