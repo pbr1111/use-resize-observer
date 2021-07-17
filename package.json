@@ -1,6 +1,6 @@
 {
     "name": "@pbr1111/use-resize-observer",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "description": "useResizeObserver hook",
     "private": false,
     "author": "pbr1111 <pbr1111@gmail.com>",
@@ -33,14 +33,14 @@
         "size": "size-limit"
     },
     "devDependencies": {
-        "@size-limit/preset-small-lib": "^4.9.2",
-        "@types/react": "^17.0.2",
-        "@types/react-dom": "^17.0.1",
-        "react": "^17.0.1",
-        "react-dom": "^17.0.1",
-        "size-limit": "^4.9.2",
+        "@size-limit/preset-small-lib": "^5.0.1",
+        "@types/react": "^17.0.14",
+        "@types/react-dom": "^17.0.9",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "size-limit": "^5.0.1",
         "tsdx": "^0.14.1",
-        "typescript": "^4.2.2"
+        "typescript": "^4.3.5"
     },
     "peerDependencies": {
         "react": ">=16.8.0",
