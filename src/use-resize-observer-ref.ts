@@ -1,7 +1,6 @@
 import {
     useRef,
     useCallback,
-    Ref,
     RefCallback,
     useLayoutEffect,
     useEffect
@@ -16,7 +15,7 @@ type ChangeCallback = (newSize: Size, oldSize: Size) => void;
 
 const useResizeObserverRef = <T extends Element>(
     onChange: ChangeCallback
-): Ref<T> => {
+): RefCallback<T> => {
     const animationFrameId = useRef<number>();
     const nodeRef = useRef<T | null>();
     const resizeObserverRef = useRef<ResizeObserver>();

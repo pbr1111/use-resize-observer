@@ -1,8 +1,8 @@
-import { useState, useMemo, Ref, useCallback } from 'react';
+import { useState, useMemo, RefCallback, useCallback } from 'react';
 import { useResizeObserverRef, Size } from './use-resize-observer-ref';
 
 type ResizeObserverObject<T> = {
-    ref: Ref<T>;
+    ref: RefCallback<T>;
 } & Size;
 
 const useResizeObserver = <T extends Element>(): ResizeObserverObject<T> => {

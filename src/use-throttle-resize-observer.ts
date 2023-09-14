@@ -1,8 +1,15 @@
-import { Ref, useState, useMemo, useEffect, useRef, useCallback } from 'react';
+import {
+    RefCallback,
+    useState,
+    useMemo,
+    useEffect,
+    useRef,
+    useCallback
+} from 'react';
 import { useResizeObserverRef, Size } from './use-resize-observer-ref';
 
 type ResizeObserverObject<T> = {
-    ref: Ref<T>;
+    ref: RefCallback<T>;
 } & Size;
 
 const useThrottleResizeObserver = <T extends Element>(
